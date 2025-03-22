@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:background="#FFD584"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:height="30dp"
+        android:background="#C3973C"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:text="@string/konfigurator_samochodu"/>
+
+    <RadioGroup
+        android:id="@+id/radiogroup_car"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="17dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/sedan"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="17dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/suv"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="17dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/hatchback"/>
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/checkbox_cooler"
+        android:layout_width="181dp"
+        android:layout_height="wrap_content"
+        android:text="@string/klimatyzacja" />
+
+    <CheckBox
+        android:id="@+id/checkbox_leatherSeats"
+        android:layout_width="181dp"
+        android:layout_height="wrap_content"
+        android:text="@string/skorzane_siedzenia" />
+
+    <CheckBox
+        android:id="@+id/checkbox_gps"
+        android:layout_width="181dp"
+        android:layout_height="wrap_content"
+        android:text="@string/wbudowany_gps" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="12dp"
+        android:orientation="vertical"
+        android:background="#E09A60"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:height="30dp"
+            android:background="#C3973C"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:text="@string/twoj_samochod" />
+
+        <ImageView
+            android:id="@+id/imageview_car"
+            android:layout_width="300dp"
+            android:layout_height="275dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/zdjecie_samochodu"
+            android:src="@drawable/suv" />
+
+        <TextView
+            android:id="@+id/textview_car"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:height="30dp"
+            android:background="#C3973C"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:text="@string/twoj_samochod"/>
+    </LinearLayout>
+
+</LinearLayout>

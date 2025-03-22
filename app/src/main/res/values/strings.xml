@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Konfigurator Samochodu</string>
+    <string name="konfigurator_samochodu">Konfigurator Samochodu</string>
+    <string name="sedan">Sedan</string>
+    <string name="suv">Suv</string>
+    <string name="hatchback">Hatchback</string>
+    <string name="klimatyzacja">Klimatyzacja</string>
+    <string name="skorzane_siedzenia">Skórzane siedzenia</string>
+    <string name="wbudowany_gps">Wbudowany GPS</string>
+    <string name="twoj_samochod">Twój samochód</string>
+    <string name="zdjecie_samochodu">zdjęcie samochodu</string>
+</resources>
