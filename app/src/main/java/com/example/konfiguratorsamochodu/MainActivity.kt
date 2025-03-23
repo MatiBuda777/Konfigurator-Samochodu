@@ -25,11 +25,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         val radioGroup = findViewById<RadioGroup>(R.id.radiogroup_car)
-        val checkbox_cooler = findViewById<CheckBox>(R.id.checkbox_cooler)
-        val checkbox_leatherSeats = findViewById<CheckBox>(R.id.checkbox_leatherSeats)
-        val checkbox_gps = findViewById<CheckBox>(R.id.checkbox_gps)
-        val imageview_car = findViewById<ImageView>(R.id.imageview_car)
-        val textview_car = findViewById<TextView>(R.id.textview_car)
+        val checkboxCooler = findViewById<CheckBox>(R.id.checkbox_cooler)
+        val checkboxLeatherSeats = findViewById<CheckBox>(R.id.checkbox_leatherSeats)
+        val checkboxGps = findViewById<CheckBox>(R.id.checkbox_gps)
+        val imageviewCar = findViewById<ImageView>(R.id.imageview_car)
+        val textviewCar = findViewById<TextView>(R.id.textview_car)
         var text = ""
 
 
@@ -50,35 +50,35 @@ class MainActivity : AppCompatActivity() {
                 if (checkedRadioButton.text.contains("Suv")) resId = R.drawable.suv
                 if (checkedRadioButton.text.contains("Sedan")) resId = R.drawable.sedan
                 if (checkedRadioButton.text.contains("Hatchback")) resId = R.drawable.hatchback
-                imageview_car.setImageResource(resId)
+                imageviewCar.setImageResource(resId)
             }
-            if (checkbox_cooler.isChecked) {
-                selectedFeatures.add(checkbox_cooler.text.toString())
+            if (checkboxCooler.isChecked) {
+                selectedFeatures.add(checkboxCooler.text.toString())
             }
-            if (checkbox_leatherSeats.isChecked) {
-                selectedFeatures.add(checkbox_leatherSeats.text.toString())
+            if (checkboxLeatherSeats.isChecked) {
+                selectedFeatures.add(checkboxLeatherSeats.text.toString())
             }
-            if (checkbox_gps.isChecked) {
-                selectedFeatures.add(checkbox_gps.text.toString())
+            if (checkboxGps.isChecked) {
+                selectedFeatures.add(checkboxGps.text.toString())
             }
 
             text = selectedFeatures.joinToString(",\n")
-            textview_car.text = text
+            textviewCar.text = text
         }
 
-        radioGroup.setOnCheckedChangeListener { _, checkedId ->
+        radioGroup.setOnCheckedChangeListener { _, _ ->
             updateSelectedFeatures()
         }
 
-        checkbox_cooler.setOnCheckedChangeListener { _, isChecked ->
+        checkboxCooler.setOnCheckedChangeListener { _, _ ->
             updateSelectedFeatures()
         }
 
-        checkbox_leatherSeats.setOnCheckedChangeListener { _, isChecked ->
+        checkboxLeatherSeats.setOnCheckedChangeListener { _, _ ->
             updateSelectedFeatures()
         }
 
-        checkbox_gps.setOnCheckedChangeListener { _, isChecked ->
+        checkboxGps.setOnCheckedChangeListener { _, _ ->
             updateSelectedFeatures()
         }
     }
