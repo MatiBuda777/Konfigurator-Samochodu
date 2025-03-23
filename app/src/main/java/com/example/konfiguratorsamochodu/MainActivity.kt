@@ -32,27 +32,25 @@ class MainActivity : AppCompatActivity() {
         val textview_car = findViewById<TextView>(R.id.textview_car)
         var text = ""
 
-        radioGroup.setOnCheckedChangeListener { _, checkedId ->
-            val checkedRadioButton: RadioButton = findViewById(checkedId)
-            val selectedText = checkedRadioButton.text.toString()
 
-            // Usuwanie niechcianych nazw
+        // Aktualizacja listy wybranych dodatków
+        fun updateSelectedFeatures() {
             text = text.replace("Sedan, ", "")
                 .replace("Suv, ", "")
                 .replace("Hatchback, ", "")
 
-            text += "$selectedText, "
-        }
-
-
-        // Aktualizacja listy wybranych dodatków
-        fun updateSelectedFeatures() {
             val selectedFeatures = mutableListOf<String>()
 
             val selectedRadioId = radioGroup.checkedRadioButtonId
             if (selectedRadioId != -1) {
                 val checkedRadioButton: RadioButton = findViewById(selectedRadioId)
                 selectedFeatures.add(checkedRadioButton.text.toString())
+
+                var resId: Int = 0
+                if (checkedRadioButton.text.contains("Suv")) resId = R.drawable.suv
+                if (checkedRadioButton.text.contains("Sedan")) resId = R.drawable.sedan
+                if (checkedRadioButton.text.contains("Hatchback")) resId = R.drawable.hatchback
+                imageview_car.setImageResource(resId)
             }
             if (checkbox_cooler.isChecked) {
                 selectedFeatures.add(checkbox_cooler.text.toString())
@@ -64,8 +62,12 @@ class MainActivity : AppCompatActivity() {
                 selectedFeatures.add(checkbox_gps.text.toString())
             }
 
-            text = selectedFeatures.joinToString(", ")
+            text = selectedFeatures.joinToString(",\n")
             textview_car.text = text
+        }
+
+        radioGroup.setOnCheckedChangeListener { _, checkedId ->
+            updateSelectedFeatures()
         }
 
         checkbox_cooler.setOnCheckedChangeListener { _, isChecked ->

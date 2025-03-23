@@ -70,8 +70,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="12dp"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="32dp"
         android:orientation="vertical"
         android:background="#E09A60"
         >
@@ -96,10 +96,11 @@
             android:id="@+id/textview_car"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:height="30dp"
+            android:height="100dp"
+            android:padding="5dp"
             android:background="#C3973C"
             android:textAlignment="center"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:text="@string/twoj_samochod"/>
     </LinearLayout>
 
